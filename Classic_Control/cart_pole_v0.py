@@ -84,7 +84,7 @@ def train(model):
             # - These are the labels for our critic
             returns = []
             discounted_sum = 0
-            for r in rewards_history[::-1]:
+            for r in rewards_history[::-1]: # Reverse rewards_history (rn, ...., r1). rn * gamma^(n-1) + ... + r1
                 discounted_sum = r + gamma * discounted_sum
                 returns.insert(0, discounted_sum)
 
